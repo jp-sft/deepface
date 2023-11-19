@@ -1,0 +1,34 @@
+# deepface-api
+
+###
+# @name Represent
+POST http://127.0.0.1:5000/represent
+Content-Type: application/json
+
+{
+  "model_name": "Facenet",
+  "img": "/Users/sefik/Desktop/deepface/tests/dataset/img1.jpg"
+}
+
+###
+# @name Face verification
+POST http://127.0.0.1:5000/verify
+Content-Type: application/json
+
+  {
+  	"img1_path": "/Users/sefik/Desktop/deepface/tests/dataset/img1.jpg",
+    "img2_path": "/Users/sefik/Desktop/deepface/tests/dataset/img2.jpg",
+    "model_name": "Facenet",
+    "detector_backend": "mtcnn",
+    "distance_metric": "euclidean"
+  }
+
+###
+# @name Face analysis
+POST http://127.0.0.1:5000/analyze
+Content-Type: application/json
+
+{
+    "img_path": "/Users/sefik/Desktop/deepface/tests/dataset/couple.jpg",
+    "actions": ["age", "gender", "emotion", "race"]
+}
